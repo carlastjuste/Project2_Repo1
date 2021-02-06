@@ -11,19 +11,9 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        ingredientName: {
+        ingredients: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        quantity: {
-            type: DataTypes.DECIMAL,
-            allowNull: false
-        },
-        unit: {
-            type: {
-                type: DataTypes.ENUM,
-                values: ['cup(s)', 'tbsp(s)', 'tsp(s)']
-            }
         },
         instructions: {
             type: DataTypes.TEXT,
