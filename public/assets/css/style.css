@@ -14,15 +14,14 @@ header {
     padding: 10px;
     display: flex;
     flex-flow: row nowrap;
-   
 }
+
 header h1 {
     text-align: left;
     color:#FFFFFF;
     font-size: large;
     font-family: "Comic Sans MS", "Times New Roman", Times, serif;
     width: 90%;
-
 }
 
 .login {
@@ -30,19 +29,17 @@ header h1 {
     justify-content: right;
     color: #FFFFFF;
     text-decoration: none
-    
-
 }
 
 /* Menu design */
 
+.btn-primary,
 .menu {
     text-align:  center;
-    background:#FFAD00;
+    background:#FFAD00 !important;
     overflow: hidden;
     height: 50px;
-  
-    
+    border: none !important;
 }
 
 .menu a {
@@ -57,12 +54,12 @@ header h1 {
 .menu a:hover {
     background-color: #ffe9c9;
     color: #1d0033;
-  }
+}
 
 .menu a.active {
     background-color: orangered;
     color: white;
-  }
+}
 
 
   /* Browse recipe section design */
@@ -88,8 +85,6 @@ header h1 {
     width: 300px;
     margin-left: auto;
     margin-top: auto;
-    
-
 }
 
 #search-recipes-Btn{
@@ -104,5 +99,4 @@ header h1 {
     font-weight: 700;
     font-style: normal;
     border: none;
-
 }
