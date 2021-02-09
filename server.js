@@ -8,8 +8,8 @@
   // Sets up an instance of the Express App
   var app = express();
   
-  //Set the port of our App
-  var PORT = process.env.PORT || 3000;
+  //Set the port for app
+  var PORT = process.env.PORT || 8080;
 
   //Set handlebars as the default templating engine
   app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -22,6 +22,7 @@
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
   
+
   // Import routes and give the server access to them.
   var routes = require("./controllers/recipes_controller.js");
   
