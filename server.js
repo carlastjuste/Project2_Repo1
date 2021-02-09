@@ -1,23 +1,26 @@
 
   require('dotenv').config();
-  var express = require("express");
+
+  //Dependencies
+  var express = require("express");  
+  var exphbs = require("express-handlebars");
+
+  // Sets up an instance of the Express App
+  var app = express();
   
+  //Set the port of our App
   var PORT = process.env.PORT || 3000;
 
-  // Sets up the Express App
-  var app = express();
+  //Set handlebars as the default templating engine
+  app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+  app.set("view engine", "handlebars");
+  
   
   app.use(express.static("public"));
   
   // Parse request body as JSON
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
-  
-  // Set Handlebars.
-  var exphbs = require("express-handlebars");
-  
-  app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-  app.set("view engine", "handlebars");
   
   // Import routes and give the server access to them.
   var routes = require("./controllers/recipes_controller.js");
