@@ -8,7 +8,7 @@ var recipe = require("../models/recipe.js");
 //gets all recipes via selectAll orm 
 router.get("/", function (req, res) {
 
-    recipe.selectAll(function (data) {
+    recipe.selectWhere(function (data) {
 
         var rObject = {
             recipes: data
