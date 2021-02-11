@@ -6,7 +6,7 @@ var router = express.Router();
 var recipe = require("../models/recipe.js");
 
 //gets all recipes via selectAll orm 
-router.get("/", function (req, res) {
+router.get("/api/recipes", function (req, res) {
 
     recipe.selectAll(function (data) {
 

@@ -1,7 +1,7 @@
 //creating Recipe Model(table) in `recipeHub_db` via sequelize
 
 module.exports = function (sequelize, DataTypes) {
-    var Recipe = sequelize.define("recipe", {
+    var Recipe = sequelize.define("Recipe", {
         recipeId: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -19,29 +19,30 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.DECIMAL,
             allowNull: false
         },
-        unit: {
-            type: {
-                type: DataTypes.ENUM,
-                values: ['cup(s)', 'tbsp(s)', 'tsp(s)']
-            }
-        },
+        // units: {
+        //     // Doesnt recognize data type
+        //     type: DataTypes.ARRAY(DataTypes.TEXT),
+        //     defaultValue: ["cup(s)", "tbsp(s)", "tsp(s)"]
+
+
+        // },
         instructions: {
             type: DataTypes.TEXT,
             allowNull: false
         },
         categoryType: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING
         }
     });
     //------The Association below will only work once we use the User Table----------------------
-    // Recipe.associate = function (models) {
-    //     // We're saying that a Recipe should belong to a User
-    //     Recipe.belongsTo(models.User, {
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
-    //     });
-    // };
+    Recipe.associate = function (models) {
+        // We're saying that a Recipe should belong to a User
+        Recipe.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
 
     return Recipe;
 };

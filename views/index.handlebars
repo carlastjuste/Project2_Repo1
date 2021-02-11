@@ -1,87 +1,84 @@
-    <header>
-        <h1>THE RECIPE HUB</h1>
-        <a href='#' class='login'><i class="fa fa-fw fa-user"></i>Login</a>
-    </header>
-    <main>
-        <!-- Menu Section -->
-        <div class="menu">
-            <a class="active" href="#home"><i class='fa fa-home fa-2x'></i>&nbsp;Home</a>
-            <a href="#search"><i class='fa fa-search fa-2x'></i>&nbsp;My Recipes</a>
-            <a href="#add-recipe"><i class="fa fa-plus fa-2x"></i>&nbsp;Add Recipes</a>
-            <a href="#add-grocery-list"><i class='fa fa-list-alt fa-2x'></i>&nbsp;Create Grocery List</a>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                    class="fa fa-exchange fa-2x"></i>&nbsp;Unit Converter</button>
+{{>header}}
+<main>
+    <!-- Menu Section -->
+    <div class="menu">
+        <a class="active" href="#home"><i class='fa fa-home fa-2x'></i>&nbsp;Home</a>
+        <a href="#search"><i class='fa fa-search fa-2x'></i>&nbsp;My Recipes</a>
+        <a href="#add-recipe"><i class="fa fa-plus fa-2x"></i>&nbsp;Add Recipes</a>
+        <a href="#add-grocery-list"><i class='fa fa-list-alt fa-2x'></i>&nbsp;Create Grocery List</a>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                class="fa fa-exchange fa-2x"></i>&nbsp;Unit Converter</button>
+    </div>
+    <!-- Browse Recipe Section -->
+    <section class='browse-recipe'>
+        <div class='browse-image'>
+            <img src="./assets/img/toast.jpeg" alt="French Toast">
         </div>
-        <!-- Browse Recipe Section -->
-        <section class='browse-recipe'>
-            <div class='browse-image'>
-                <img src="./assets/img/toast.jpeg" alt="French Toast">
-            </div>
-            <div class="browse-recipe-search">
-                <input id="search-recipes" type="text" name="search" value placeholder="Search for a recipe"><br />
-                <button id="search-recipes-Btn" type="submit"><i class='fa fa-search fa-2x'></i>&nbsp;&nbsp;BROWSE
-                    RECIPES</button>
-            </div>
-        </section>
-    </main>
-    <footer>
-    </footer>
+        <div class="browse-recipe-search">
+            <input id="search-recipes" type="text" name="search" value placeholder="Search for a recipe"><br />
+            <button id="search-recipes-Btn" type="submit"><i class='fa fa-search fa-2x'></i>&nbsp;&nbsp;BROWSE
+                RECIPES</button>
+        </div>
+    </section>
+</main>
+<footer>
+</footer>
 
-    <!--- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Unit Converter</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <label for="ingredient">Ingredient</label>
-                        <input type="text" id="ingredient" name="ingredient"><br><br>
-                        <label for="startUnit">Convert From:</label>
-                        <input type="text" id="startUnit" name="startUnit"><br><br>
-                        <label for="quantity">Quantity:</label>
-                        <input type="text" id="quantity" name="quantity"><br><br>
-                        <label for="targetUnit">Convert To:</label>
-                        <input type="text" id="targetUnit" name="targetUnit"><br><br>
-                        <p class="convert-answer">Hello</p>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="convert-btn btn btn-primary">Convert that unit!</button>
-                </div>
+<!--- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Unit Converter</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label for="ingredient">Ingredient</label>
+                    <input type="text" id="ingredient" name="ingredient"><br><br>
+                    <label for="startUnit">Convert From:</label>
+                    <input type="text" id="startUnit" name="startUnit"><br><br>
+                    <label for="quantity">Quantity:</label>
+                    <input type="text" id="quantity" name="quantity"><br><br>
+                    <label for="targetUnit">Convert To:</label>
+                    <input type="text" id="targetUnit" name="targetUnit"><br><br>
+                    <p class="convert-answer">Hello</p>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="convert-btn btn btn-primary">Convert that unit!</button>
             </div>
         </div>
     </div>
-    <!---Javascript Code for Bootstrap Modal--->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
+</div>
+<!---Javascript Code for Bootstrap Modal--->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        $(".convert-btn").on("click", function () {
-            var ingredientName = document.getElementById("ingredient").value;
-            var startingUnit = document.getElementById("startUnit").value;
-            var sourceAmount = document.getElementById("quantity").value;
-            var targetUnit = document.getElementById("targetUnit").value;
+    $(".convert-btn").on("click", function () {
+        var ingredientName = document.getElementById("ingredient").value;
+        var startingUnit = document.getElementById("startUnit").value;
+        var sourceAmount = document.getElementById("quantity").value;
+        var targetUnit = document.getElementById("targetUnit").value;
 
-            const settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/convert?ingredientName=${ingredientName}&targetUnit=${targetUnit}&sourceUnit=${startingUnit}&sourceAmount=${sourceAmount}`,
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-key": "placeholder",
-                    "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-                }
-            };
+        const settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/convert?ingredientName=${ingredientName}&targetUnit=${targetUnit}&sourceUnit=${startingUnit}&sourceAmount=${sourceAmount}`,
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-key": "placeholder",
+                "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+            }
+        };
 
-            $.ajax(settings).done(function (response) {
-                document.querySelector(".convert-answer").innerHTML = response.answer;
-            });
+        $.ajax(settings).done(function (response) {
+            document.querySelector(".convert-answer").innerHTML = response.answer;
         });
-    </script>
+    });
+</script>

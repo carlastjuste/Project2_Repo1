@@ -1,33 +1,39 @@
 
-  require('dotenv').config();
+require('dotenv').config();
 
-  //Dependencies
-  var express = require("express");  
-  var exphbs = require("express-handlebars");
+//Dependencies
+var express = require("express");
+var exphbs = require("express-handlebars");
 
-  // Sets up an instance of the Express App
-  var app = express();
-  
-  //Set the port for app
-  var PORT = process.env.PORT || 8080;
+var db = require("./models")
+// Sets up an instance of the Express App
+var app = express();
 
-  //Set handlebars as the default templating engine
-  app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-  app.set("view engine", "handlebars");
-  
-  
-  app.use(express.static("public"));
-  
-  // Parse request body as JSON
-  app.use(express.urlencoded({ extended: true }));
-  app.use(express.json());
-  
+//Set the port for app
+var PORT = process.env.PORT || 8080;
 
-  // Import routes and give the server access to them.
-  var routes = require("./controllers/recipes_controller.js");
-  
-  app.use(routes);
-  
+//Set handlebars as the default templating engine
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+
+app.use(express.static("public"));
+
+// Parse request body as JSON
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
+// Import routes and give the server access to them.
+var routes = require("./controllers/recipes_controller.js");
+
+app.use(routes);
+require("./routes/html-routes")(app)
+db.sequelize.sync().then(function () {
   app.listen(PORT, function () {
-      console.log("App now listening at localhost:" + PORT);
+    console.log("App now listening at localhost:" + PORT);
   });
+
+})
+
+

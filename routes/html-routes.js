@@ -6,6 +6,9 @@ module.exports = function (app) {
 
     // Basic route that sends the user to thee home page
     app.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname, "index.html"));
+        res.render("index")
+    });
+    app.get("/recipes", function (req, res) {
+        res.render("recipes")
     });
 };
