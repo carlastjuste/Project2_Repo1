@@ -20,7 +20,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         // units: {
-        //     // Doesnt recognize data type
+        //     // Doesnt recognize data type code needs review?
         //     type: DataTypes.ARRAY(DataTypes.TEXT),
         //     defaultValue: ["cup(s)", "tbsp(s)", "tsp(s)"]
 
