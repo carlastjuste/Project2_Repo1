@@ -1,0 +1,11 @@
+{
+  "development": {
+    "use_env_variable": "LOCAL_HOST",
+    "dialect": "mysql"
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+  }
+}
+
