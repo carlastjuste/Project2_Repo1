@@ -1,23 +1,27 @@
+
 $(document).ready(function () {
+
+
 
 
     $('.Submit-recipe').on('click', function (event) {
         event.preventDefault();
 
+
         if (nameInput) {
-            var recipeInfo = {
-                name: "blue berry toast"
+            var RecipeInfo = {
+                name: "Blue berry toast",
             };
-            console.log(blueberryinfo);
+            console.log(berryInfo);
             $.ajax({
                 method: 'POST',
                 url: '/api/recipes',
-                data: blueberryinfo,
+                data: berryInfo,
             }).then(function (data) {
-                // reload page to display devoured burger in proper column
                 console.log(data)
-                location.reload();
-
+                // location.reload();
             });
         }
-    })
+    });
+
+
