@@ -1,5 +1,5 @@
-
 require('dotenv').config();
+
 
 //Dependencies
 var express = require("express");
@@ -18,22 +18,38 @@ app.set("view engine", "handlebars");
 
 
 app.use(express.static("public"));
+var express = require('express');
+var exphbs = require('express-handlebars');
+
+// bring in the models and routes
+var db = require('./models');
+var routes = require('./controllers/recipes_controller');
+
+var PORT = process.env.PORT || 8080;
+
+var app = express();
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static('public'));
 
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-// Import routes and give the server access to them.
-var routes = require("./controllers/recipes_controller.js");
+app.engine(
+  'handlebars',
+  exphbs({
+    defaultLayout: 'main',
+    helpers: {
+      renderUrl: (value) => (value === '/burgers' ? true : false),
+    },
+  }),
+);
+app.set('view engine', 'handlebars');
 
 app.use(routes);
-require("./routes/html-routes")(app)
-db.sequelize.sync().then(function () {
+
+db.sequelize.sync({ force: false }).then(function () {
   app.listen(PORT, function () {
-    console.log("App now listening at localhost:" + PORT);
+    console.log('App listening on PORT http://localhost:' + PORT);
   });
-
-})
-
-
+});

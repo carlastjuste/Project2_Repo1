@@ -11,18 +11,47 @@ body {
 
 header {
     background: orangered;
-    padding: 10px;
+    padding: 4px; 
     display: flex;
     flex-flow: row nowrap;
+    justify-content: space-between;
 }
+
 
 header h1 {
     text-align: left;
     color:#FFFFFF;
     font-size: large;
     font-family: "Comic Sans MS", "Times New Roman", Times, serif;
-    width: 90%;
+
 }
+
+
+#search-recipes{
+    border-radius: 40px;
+    border: 0px solid orangered;
+    color: hsl(0, 0%, 29%);
+    width: 300px;
+    margin-top: 2px;
+    font-size: medium;
+
+
+
+}
+
+#search-recipes-Btn{
+    border-radius: 34px;
+    background-color: orange;
+    color: white;
+    width: 40px;
+    border: none;
+
+
+
+}
+
+
+
 
 .login {
     text-align: right;
@@ -62,41 +91,3 @@ header h1 {
 }
 
 
-  /* Browse recipe section design */
-
-.browse-recipe{
-    float: left;
-    display: flexbox;
-    flex-flow: row wrap;
-}
-
-.browse-image {
-
-}
-
-
-
-#search-recipes{
-    border-radius: 34.2px;
-    height: 48px;
-    border: 2px solid orangered;
-    font-size: 16px;
-    color: hsl(0, 0%, 29%);
-    width: 300px;
-    margin-left: auto;
-    margin-top: auto;
-}
-
-#search-recipes-Btn{
-    height: 48px;
-    border-radius: 34.2px;
-    background-color: orangered;
-    color: white;
-    text-align: center;
-    width: 300px;
-    text-transform: uppercase;
-    font-family: freight-sans-pro,serif;
-    font-weight: 700;
-    font-style: normal;
-    border: none;
-}
