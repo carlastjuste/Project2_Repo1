@@ -1,4 +1,5 @@
 const express = require('express');
+const Sequelize = require('sequelize');
 const router = express.Router();
 
 // Requiring our Recipe model
@@ -13,7 +14,7 @@ router.get('/recipes', async (req, res) => {
 
         }).map((el) => el.get({ plain: true }));
 
-        // display recipes on recipes-search-result page
+        // display recipes on recipes-search-result
         const hbsObject = {
             recipes: dbRecipes,
         };
@@ -25,7 +26,7 @@ router.get('/recipes', async (req, res) => {
 
 // api post route to create recipe
 router.post('/api/recipes/create', async (req, res) => {
-    
+
     const newRecipe = new db.Recipe({
         recipeName: req.body.recipeName,
         ingredients: req.body.ingredients,
@@ -39,7 +40,6 @@ router.post('/api/recipes/create', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
 
 //api route to get recipes from selected category 
 router.get("/api/recipes/category/:categoryType", function (req, res) {
