@@ -1,6 +1,13 @@
 const express = require('express');
 const Sequelize = require('sequelize');
 const router = express.Router();
+// html routes/ index/ recipes search/ recipes
+// get route -> index
+router.get('./Recipes', (req, res) => {
+    // send us to the next get function instead.
+    res.redirect('/burgers');
+});
+
 
 // Requiring our Recipe model
 var db = require("../models");
