@@ -45,9 +45,6 @@ header h1 {
     color: white;
     width: 40px;
     border: none;
-
-
-
 }
 
 
@@ -90,4 +87,20 @@ header h1 {
     color: white;
 }
 
+/* Modal Design */
+#ingredient,
+#quantity {
+    width: auto !important;
+    height: 30px !important;
+}
 
+.form-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.form-select {
+    width: 200px !important;
+}

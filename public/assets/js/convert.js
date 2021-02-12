@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
     //add click events and call function for each html button
@@ -18,6 +17,7 @@ $(document).ready(function () {
     }
 
     function convertMeasurement() {
+
         var $ingredientName = $("#ingredient").val();
         var $startingUnit = $("#startUnit").val();
         var $sourceAmount = $("#quantity").val();
