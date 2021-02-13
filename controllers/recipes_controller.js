@@ -17,17 +17,18 @@ var axios = require("axios");
 // api route to get all recipes from recipes table
 router.get('/recipes', async (req, res) => {
     try {
-        const dbRecipes = await db.Recipe.findAll({
+        const dbRecipes = (await db.Recipe.findAll({
 
-        }).map((el) => el.get({ plain: true }));
+        })).map((el) => el.get({ plain: true }));
 
         // display recipes on recipes-search-result
         const hbsObject = {
             recipes: dbRecipes,
         };
         console.log(hbsObject)
-        return res.render('Recipes-Search-Result', hbsObject);
+        return res.render('Recipes-Search-Results', hbsObject);
     } catch (err) {
+        console.log(err)
         return res.status(500).json(err);
 
     }
@@ -46,7 +47,7 @@ router.post('/api/recipes/create', async (req, res) => {
         const dbRecipe = await newRecipe.save();
         res.redirect('/');
     } catch (err) {
-        res.status(500).json(err);
+        res.status(500).json(err); console.log(err)
     }
 });
 
