@@ -3,9 +3,9 @@ const Sequelize = require('sequelize');
 const router = express.Router();
 // html routes/ index/ recipes search/ recipes
 // get route -> index
-router.get('./Recipes', (req, res) => {
+router.get('/', (req, res) => {
     // send us to the next get function instead.
-    res.redirect('/burgers');
+    res.redirect('/recipes');
 });
 
 
@@ -25,9 +25,11 @@ router.get('/recipes', async (req, res) => {
         const hbsObject = {
             recipes: dbRecipes,
         };
+        console.log(hbsObject)
         return res.render('Recipes-Search-Result', hbsObject);
     } catch (err) {
         return res.status(500).json(err);
+
     }
 });
 

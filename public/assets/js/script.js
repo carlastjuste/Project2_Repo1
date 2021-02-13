@@ -12,14 +12,15 @@ $(document).ready(function () {
             var RecipeInfo = {
                 name: "Blue berry toast",
             };
-            console.log(berryInfo);
+            console.log(RecipeInfo);
             $.ajax({
                 method: 'POST',
-                url: '/api/recipes',
-                data: berryInfo,
+                url: '/api/Recipes-Search-Results',
+                data: RecipeInfo,
             }).then(function (data) {
                 console.log(data)
                 // location.reload();
             });
         }
-    });
+    })
+})
