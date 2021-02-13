@@ -57,6 +57,7 @@ router.get("/api/recipes/category/:categoryType", function (req, res) {
     })
         .then(function (dbRecipe) {
             res.json(dbRecipe);
+            //res.render("recipes", {})
         });
 });
 
