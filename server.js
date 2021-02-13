@@ -1,27 +1,6 @@
 require('dotenv').config();
 
-<<<<<<< HEAD
-
 //Dependencies
-var express = require("express");
-var exphbs = require("express-handlebars");
-
-var db = require("./models")
-// Sets up an instance of the Express App
-var app = express();
-
-//Set the port for app
-var PORT = process.env.PORT || 8080;
-
-//Set handlebars as the default templating engine
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
-
-app.use(express.static("public"));
-=======
-//Dependencies
->>>>>>> 4b9123b3f2a6352c155d77055032a2ab5a309f5d
 var express = require('express');
 var exphbs = require('express-handlebars');
 
