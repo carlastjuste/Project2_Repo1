@@ -25,14 +25,14 @@ router.get('/recipes', async (req, res) => {
         const hbsObject = {
             recipes: dbRecipes,
         };
-        return res.render('Recipes-Search-Result', hbsObject);
+        return res.render('Recipes-Search-Results', hbsObject);
     } catch (err) {
         return res.status(500).json(err);
     }
 });
 
 // api post route to create recipe
-router.post('/api/recipes/create', async (req, res) => {
+router.post('/recipes/create', async (req, res) => {
 
     const newRecipe = new db.Recipe({
         recipeName: req.body.recipeName,
