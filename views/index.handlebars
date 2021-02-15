@@ -1,0 +1,56 @@
+<section class='browse-recipe'>
+            <div class='browse-image'>
+               
+            </div>
+</section>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Unit Converter</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="ingredient">Ingredient</label>
+                        <input type="text" id="ingredient" name="ingredient">
+                        <br><br>
+                        <div class="form-options">
+                            <select class="form-select" aria-label="Default select example" id="startUnit">
+                                <option selected>Convert From</option>
+                                <option>cup</option>
+                                <option>tablespoon</option>
+                                <option>teaspoon</option>
+                                <option>ounce</option>
+                                <option>pound</option>
+                                <option>milliliter</option>
+                                <option>gram</option>
+                                <option>kilogram</option>
+                            </select>
+                            <h3>to</h3>
+                            <select class="form-select" aria-label="Default select example" id="targetUnit">
+                                <option selected>Convert To</option>
+                                <option>cup</option>
+                                <option>tablespoon</option>
+                                <option>teaspoon</option>
+                                <option>ounce</option>
+                                <option>pound</option>
+                                <option>milliliter</option>
+                                <option>gram</option>
+                                <option>kilogram</option>
+                            </select>
+                        </div><br>
+                        <label for="quantity">Quantity</label>
+                        <input type="text" id="quantity" name="quantity"><br><br>
+                        <p class="converted-answer"></p>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="convert-btn btn btn-primary">Convert that unit!</button>
+                </div>
+            </div>
+        </div>
+    </div>
