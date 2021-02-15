@@ -15,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         categoryType: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING
         }
     });
     return Recipe;
