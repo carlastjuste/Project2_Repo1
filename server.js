@@ -18,7 +18,11 @@ var PORT = process.env.PORT || 8080;
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static('public'));
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.use(RoutesRecipe);
+app.use(RoutesGrocery);
+
+//app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => res.render("index"));
 
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
@@ -35,8 +39,7 @@ app.engine(
 );
 app.set('view engine', 'handlebars');
 
-app.use(RoutesRecipe);
-app.use(RoutesGrocery);
+
 
 
 //Start the Server when the Db is ready to use
