@@ -4,6 +4,13 @@
 ## Desription
 
 
+## Technologies
+* Express
+* Sequelize
+* Handlebars 
+* mySQL
+
+
 ## Installation
 
 
