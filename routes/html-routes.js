@@ -16,7 +16,10 @@ module.exports = function (app) {
     });
 };
 
+// myrecipes route
+
 var db = require("../models");
+
 
 router.get('/myrecipes', async (req, res) => {
     try {
