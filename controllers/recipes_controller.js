@@ -1,37 +1,27 @@
 const express = require('express');
 const Sequelize = require('sequelize');
 const router = express.Router();
-// html routes/ index/ recipes search/ recipes
-// get route -> index
-router.get('/', (req, res) => {
-    // send us to the next get function instead.
-    res.redirect('/recipes');
-});
-
-
 // Requiring our Recipe model
 var db = require("../models");
 // requiring axios for web api connection 
 var axios = require("axios");
 
+// html routes/ index/ recipes search/ recipes
+// get route -> index
+
+//Render Add Recipe Page
+router.get("/add-recipe", function (req, res) {
+    res.render("add-recipe");
+});
+
 // api route to get all recipes from recipes table
-router.get('/recipes', async (req, res) => {
-    try {
-        const dbRecipes = (await db.Recipe.findAll({
-
-        })).map((el) => el.get({ plain: true }));
-
-        // display recipes on recipes-search-result
-        const hbsObject = {
-            recipes: dbRecipes,
-        };
-
-        return res.render('Recipes-Search-Results', hbsObject);
-    } catch (err) {
-        console.log(err)
-        return res.status(500).json(err);
-
-    }
+router.get('/recipes', function (req, res) {
+    db.Recipe.findAll({}).then(function (dbRecipe) {
+        const newObject = {
+            recipes: dbRecipe
+        }
+        res.render("recipes", newObject);
+    });
 });
 
 // api post route to create recipe
