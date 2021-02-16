@@ -16,7 +16,10 @@ module.exports = function (app) {
     });
 };
 
+// myrecipes route
+
 var db = require("../models");
+
 
 router.get('/myrecipes', async (req, res) => {
     try {
@@ -30,6 +33,29 @@ router.get('/myrecipes', async (req, res) => {
         };
         console.log(hbsObject)
         return res.render('myrecipes', hbsObject);
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json(err);
+
+    }
+});
+
+// Recipes Search route
+var db = require("../models");
+
+
+router.get('/Recipes-Search-Results', async (req, res) => {
+    try {
+        const dbRecipes = (await db.Recipe.findAll({
+
+        })).map((el) => el.get({ plain: true }));
+
+        // display recipes on recipes-search-result
+        const hbsObject = {
+            recipes: dbRecipes,
+        };
+        console.log(hbsObject)
+        return res.render('Recipes-Search-Results', hbsObject);
     } catch (err) {
         console.log(err)
         return res.status(500).json(err);
