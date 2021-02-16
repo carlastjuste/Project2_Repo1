@@ -31,10 +31,13 @@ router.get("/recipes", function (req, res) {
 
 // api route to get all recipes from recipes table
 router.get('/search-all-recipes', function (req, res) {
+    console.log("SEARCH ALL")
     db.Recipe.findAll({}).then(function (dbRecipe) {
+        console.log(dbRecipe)
         const newObject = {
             recipes: dbRecipe
         }
+        console.log(newObject)
         res.render("recipes", newObject);
     });
 });

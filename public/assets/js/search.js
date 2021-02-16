@@ -29,11 +29,6 @@ $(document).ready(function () {
 
     function sendAll() {
         console.log("send all button")
-        $.ajax({
-            method: 'GET',
-            url: '/search-all-recipes',
-        }).then(function (data) {
-            console.log(data)
-        });
+        location.reload("/search-all-recipes")
     }
 });
