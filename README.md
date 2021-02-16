@@ -32,7 +32,7 @@ https://the-recipe-hub.herokuapp.com/
 ## Credits
 
 ## License
-This project is licesed inder MIT license- see LICENSE file for details.
+This project is licensed under MIT license- see LICENSE file for details.
 
 
 
