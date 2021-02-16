@@ -17,6 +17,9 @@ module.exports = function (sequelize, DataTypes) {
         categoryType: {
             type: DataTypes.STRING
         }
+    }, 
+    {
+        timestamps: false
     });
     return Recipe;
 };
