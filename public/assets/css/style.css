@@ -126,3 +126,16 @@ header h1 {
     margin-top: 2%;
     
 }
+/* Style for search recipes */
+.search-recipes{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 3%;
+}
+
+.search-recipes button{
+    margin-left: 40%;
+    margin-top: 2%;
+    
+}
+
