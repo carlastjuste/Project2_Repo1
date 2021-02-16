@@ -70,27 +70,26 @@ router.get("/api/recipes/category/:categoryType", function (req, res) {
 
 //--------third party API post route w info from convert.js----------
 router.post("/api/convert", function (req, res) {
-console.log(req)
-    // var options = {
-    //     method: 'GET',
-    //     url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/convert',
-    //     params: {
-    //         ingredientName: req.body.name,
-    //         targetUnit: req.body.target,
-    //         sourceUnit: req.body.unit,
-    //         sourceAmount: req.body.amount
-    //     },
-    //     headers: {
-    //         'x-rapidapi-key': process.env.API_KEY,
-    //         'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-    //     },
-    // };
+    var options = {
+        method: 'GET',
+        url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/convert',
+        params: {
+            ingredientName: req.body.name,
+            targetUnit: req.body.target,
+            sourceUnit: req.body.unit,
+            sourceAmount: req.body.amount
+        },
+        headers: {
+            'x-rapidapi-key': process.env.API_KEY,
+            'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+        },
+    };
 
-    // axios.request(options).then(function (response) {
-    //     res.send(response.data);
-    // }).catch(function (err) {
-    //     res.send(err);
-    // });
+    axios.request(options).then(function (response) {
+        res.send(response.data);
+    }).catch(function (err) {
+        res.send(err);
+    });
 });
 
 module.exports = router;
