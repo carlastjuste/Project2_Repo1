@@ -1,3 +1,4 @@
+//js for convert onclick events and to send conversion info to recipes_controller
 $(document).ready(function () {
 
     //add click events and call function for each html button
@@ -17,22 +18,20 @@ $(document).ready(function () {
     }
 
     function convertMeasurement() {
-
-        var $ingredientName = $("#ingredient").val();
-        var $startingUnit = $("#startUnit").val();
-        var $sourceAmount = $("#quantity").val();
-        var $targetUnit = $("#targetUnit").val();
-
-        //ajax post req 
+        var ingredientName = $("#ingredient").val();
+        var startingUnit = $("#startUnit").val();
+        var sourceAmount = $("#quantity").val();
+        var targetUnit = $("#targetUnit").val();
+        // ajax post req
         $.ajax({
             method: "POST",
             url: "/api/convert",
             data: {
-                name: $ingredientName,
-                unit: $startingUnit,
-                amount: $sourceAmount,
-                target: $targetUnit
-            }
+                name: ingredientName,
+                unit: startingUnit,
+                amount: sourceAmount,
+                target: targetUnit
+            },
         }).then(function (data) {
             $(".converted-answer").text(data.answer)
         });

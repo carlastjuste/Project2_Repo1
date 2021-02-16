@@ -3,16 +3,17 @@
   <form>
     <div class="form-group">
       <label for="exampleInputEmail1">Search recipe name</label>
-      <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-      <small id="recipe name" class="form-text text-muted"></small>
+      <input type="text" class="form-control" id="recipeName" aria-describedby="emailHelp" placeholder="">
+      <button type="button" class="search-recipes-name btn btn-primary btn-sm">Search by Recipe Name</button>
     </div>
 
     <div class="form-group">
       <label for="exampleInputPassword1">Search category type</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Italian, Lunch, etc">
+      <input type="text" class="form-control" id="categoryType" placeholder="Italian, Lunch, etc">
+      <button type="button" class="search-recipe-type btn btn-primary btn-sm">Search by Recipe Type</button>
     </div>
-
-    <button type="submit" class="btn btn-primary Submit-recipe">Search recipe</button>
+    <br><br>
+    <button type="button" class="search-all-recipes btn btn-primary">Show All Recipes</button>
   </form>
 </div>
 <div class="card-styling">
