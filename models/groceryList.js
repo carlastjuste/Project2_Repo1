@@ -18,7 +18,11 @@ module.exports = function (sequelize, DataTypes) {
         // Associating GroceryList with GroceryListItem
         // When an GroceryList is deleted, also delete any associated GroceryListItem
         GroceryList.hasMany(models.GroceryListItem, {
-          onDelete: "cascade"
+             foreignKey: {
+                name: 'groceryListId',
+                allowNull: false
+              }
+            ,onDelete: "cascade"
         });
       };
 
