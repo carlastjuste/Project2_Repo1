@@ -1,4 +1,4 @@
-<div>
+<!--<div>
   <ul>
     {{#each grocerylists}}
  
@@ -13,5 +13,30 @@
     {{else}}
         <p>No grocery list available </p>
     {{/each}}
+   </ul>
+</div>-->
+<div class="grid">
+    <ul>
+      {{#each grocerylists}}
+       <li> 
+        <div class="list">
+            <div class="head">
+                <h1 class="list-name">{{ groceryListName }}</h1><hr>
+                </div>
+                <ul class="item-list"> 
+                    {{#each groceryListItems}}
+                    <li class="list-item"> {{itemDescription}}</li></li>
+                    {{/each}}
+                </ul>
+                <div class="grocery-list-button">
+                        <input type="submit" value="Update" ></input>
+                        <input type="submit" value="Delete"></input>
+                </div>
+                {{else}}
+                <p>No grocery list available </p>
+            </ul>
+        </div>
+        </li>
+   {{/each}}
    </ul>
 </div>
