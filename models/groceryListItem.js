@@ -1,6 +1,6 @@
 module.exports= function(sequelize, DataTypes) {
 
-var GroceryListItem = sequelize.define('groceryListItem', {
+var GroceryListItem = sequelize.define('GroceryListItem', {
     itemId: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -20,6 +20,16 @@ var GroceryListItem = sequelize.define('groceryListItem', {
         allowNull: false
     }
 });
+
+GroceryListItem.associate = function(models) {
+    // We're saying that a Post should belong to an Author
+    // A Post can't be created without an Author due to the foreign key constraint
+    GroceryListItem.belongsTo(models.GroceryList, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
 return GroceryListItem;
 

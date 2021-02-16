@@ -13,6 +13,15 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
     }
     });
+
+    GroceryList.associate = function(models) {
+        // Associating GroceryList with GroceryListItem
+        // When an GroceryList is deleted, also delete any associated GroceryListItem
+        GroceryList.hasMany(models.GroceryListItem, {
+          onDelete: "cascade"
+        });
+      };
+
     return GroceryList;
 };
 
