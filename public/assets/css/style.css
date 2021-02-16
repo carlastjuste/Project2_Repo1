@@ -162,3 +162,16 @@ ul li p{
 ul li a {
     transform: rotate9(-6deg);
 }
+
+.search-recipes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+}
+
+.card-styling {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
