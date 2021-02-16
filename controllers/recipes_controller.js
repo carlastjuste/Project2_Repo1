@@ -28,6 +28,19 @@ router.get('/recipes/name', function (req, res) {
         res.render("recipes", newObject);
     });
 });
+router.get('/search-recipe-name', function (req, res) {
+    console.log(req.params)
+    // db.Recipe.findAll({
+    //     where: {
+    //         recipeName : req.body.recipeName
+    //     }
+    // }).then(function (dbRecipe) {
+    //     const newObject = {
+    //         recipes: dbRecipe
+    //     }
+    //     res.render("recipes", newObject);
+    // });
+})
 
 // api route to get all recipes from recipes table
 router.get('/search-all-recipes', function (req, res) {

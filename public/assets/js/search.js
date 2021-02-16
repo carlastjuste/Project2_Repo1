@@ -36,3 +36,4 @@ $(document).ready(function () {
         location.replace("/search-all-recipes")
     }
 });
+    
