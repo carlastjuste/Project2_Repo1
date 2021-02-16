@@ -25,8 +25,12 @@ router.get("/grocerylist", async (req, res) => {
               const context = {
                 grocerylists: lst.map(grocerylist => {
                   return {
-                    groceryListName: grocerylist.groceryListName
-                    ,groceryListItems: grocerylist.GroceryListItems
+                     groceryListName: grocerylist.groceryListName
+                    ,groceryListItems: grocerylist.GroceryListItems.map(item => {
+                      return {
+                        itemDescription: item.itemDescription
+                      }
+                    })
                   }
                 })
               }

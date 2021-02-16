@@ -4,11 +4,10 @@
  
         <li>    
             <a>
-                <h3>{{ this.groceryListName }}</h3>
-                {{#each this.groceryListItems}}
-                  <p>itm1</p>   
+                <h3>{{ groceryListName }}</h3>
+                {{#each groceryListItems}}
+                  <p>{{itemDescription}}</p>   
                 {{/each}}
-                
             </a>
     </li>
     {{else}}
