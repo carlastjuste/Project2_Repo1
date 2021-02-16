@@ -1,12 +1,10 @@
-// console.log("string")
+//js for the add recipe handlebars page
 $(document).ready(function () {
 
 
     $('.Submit-recipe').on('click', function (event) {
         event.preventDefault();
 
-
-        // if (nameInput) {
         var RecipeInfo = {
             recipeName: "Blue berry toast",
             ingredients: "Blue berry bread",
