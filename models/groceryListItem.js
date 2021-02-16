@@ -1,6 +1,6 @@
 module.exports= function(sequelize, DataTypes) {
 
-var GroceryListItem = sequelize.define('groceryListItem', {
+var GroceryListItem = sequelize.define('GroceryListItem', {
     itemId: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -15,11 +15,21 @@ var GroceryListItem = sequelize.define('groceryListItem', {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
+
     groceryListId: {
         type: DataTypes.INTEGER,
         allowNull: false
     }
 });
+
+GroceryListItem.associate = function(models) {
+    GroceryListItem.belongsTo(models.GroceryList, {
+      foreignKey: {
+        name:'groceryListId'
+        ,allowNull: false
+      }
+    });
+  };
 
 return GroceryListItem;
 

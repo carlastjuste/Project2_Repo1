@@ -8,9 +8,10 @@ const router = express.Router();
 const db = require("../models");
 
 //Render Grocery List page
-router.get("/groceryList", function (req, res) {
+/*router.get("/groceryList", function (req, res) {
   res.render("groceryList");
 });
+*/
 
 //==============================//
 //API routes for Grocery list
@@ -19,28 +20,26 @@ router.get("/groceryList", function (req, res) {
 // Retreive all grocery list 
 router.get("/grocerylist", async (req, res) => {
   try {
-    const dbGroceryLists = await db.GroceryList.findAll({
-      include: [
-        {
-          model: db.GroceryList,
-          attributes: ['groceryListId', 'groceryListName'],
-        },
-      ],
-      order: [['groceryListName', 'ASC']],
-
-    }).map((el) => el.get({ plain: true }));
-
-    console.log(dbGroceryLists);
-    const hbsObject = {
-      grocerylists: dbGroceryLists,
-    };
-    return res.json('grocerylist', hbsObject);
-
+  const dbGroceryLists = await db.GroceryList.findAll({ include: [db.GroceryListItem] })
+    .then( lst => {
+              const context = {
+                grocerylists: lst.map(grocerylist => {
+                  return {
+                     groceryListName: grocerylist.groceryListName
+                    ,groceryListItems: grocerylist.GroceryListItems.map(item => {
+                      return {
+                        itemDescription: item.itemDescription
+                      }
+                    })
+                  }
+                })
+              }
+        return res.render('grocerylist', context);
+      });
 
   } catch (err) {
     return res.status(500).json(err);
   }
-  // res.render("grocerylist", {testkey: "Item1"})
 })
 
 module.exports = router;

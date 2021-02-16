@@ -1,6 +1,6 @@
 // grocery_list model definition
 module.exports = function (sequelize, DataTypes) {
-    var GroceryList = sequelize.define("groceryList", {
+    var GroceryList = sequelize.define("GroceryList", {
 
         groceryListId: {
             type: DataTypes.INTEGER,
@@ -13,11 +13,21 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
     }
     });
+
+    GroceryList.associate = function(models) {
+        // Associating GroceryList with GroceryListItem
+        // When an GroceryList is deleted, also delete any associated GroceryListItem
+        GroceryList.hasMany(models.GroceryListItem, {
+             foreignKey: {
+                name: 'groceryListId',
+                allowNull: false
+              }
+            ,onDelete: "cascade"
+        });
+      };
+
     return GroceryList;
 };
 
-
-// //Sync with DB
-// grocery_list.sync();
 
 
