@@ -15,6 +15,19 @@ router.get("/recipes", function (req, res) {
 });
 
 // api route to search by recipe name
+router.get('/recipes/name', function (req, res) {
+
+    db.Recipe.findAll({
+        where: {
+            recipeName : req.body.recipeName
+        }
+    }).then(function (dbRecipe) {
+        const newObject = {
+            recipes: dbRecipe
+        }
+        res.render("recipes", newObject);
+    });
+});
 router.get('/search-recipe-name', function (req, res) {
     console.log(req.params)
     // db.Recipe.findAll({
@@ -41,22 +54,22 @@ router.get('/search-all-recipes', function (req, res) {
 });
 
 // api post route to create recipe
-// router.post('/recipes/create', async (req, res) => {
+router.post('/recipes/create', async (req, res) => {
 
-    // const newRecipe = new db.Recipe({
-    //     recipeName: req.body.recipeName,
-    //     ingredients: req.body.ingredients,
-    //     instructions: req.body.instructions,
-    //     categoryType: req.body.categoryType,
-    // });
-    // try {
-    //     const dbRecipe = await newRecipe.save();
-    //     res.redirect('/');
-    // } catch (err) {
-    //     res.status(500).json(err); console.log(err)
-    // }
-// });
-
+    const newRecipe = new db.Recipe({
+        recipeName: req.body.recipeName,
+        ingredients: req.body.ingredients,
+        instructions: req.body.instructions,
+        categoryType: req.body.categoryType,
+    });
+    try {
+        const dbRecipe = await newRecipe.save();
+        res.redirect('/');
+    } catch (err) {
+        res.status(500).json(err); console.log(err)
+    }
+});
+  
 //api route to get recipes from selected category 
 // router.get("/api/recipes/category/:categoryType", function (req, res) {
     // db.Recipe.findAll({
