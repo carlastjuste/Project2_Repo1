@@ -17,7 +17,4 @@ module.exports = function (sequelize, DataTypes) {
 };
 
 
-// //Sync with DB
-// grocery_list.sync();
-
 
