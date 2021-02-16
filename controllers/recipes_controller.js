@@ -15,29 +15,27 @@ router.get("/recipes", function (req, res) {
 });
 
 // api route to search by recipe name
-// router.get('/recipes/:name', function (req, res) {
-    
-//     db.Recipe.findAll({
-//         where: {
-//             recipeName : req.params.recipeName
-//         }
-//     }).then(function (dbRecipe) {
-//         const newObject = {
-//             recipes: dbRecipe
-//         }
-//         res.render("recipes", newObject);
-//     });
-// })
+router.get('/search-recipe-name', function (req, res) {
+    console.log(req.params)
+    // db.Recipe.findAll({
+    //     where: {
+    //         recipeName : req.body.recipeName
+    //     }
+    // }).then(function (dbRecipe) {
+    //     const newObject = {
+    //         recipes: dbRecipe
+    //     }
+    //     res.render("recipes", newObject);
+    // });
+})
 
 // api route to get all recipes from recipes table
 router.get('/search-all-recipes', function (req, res) {
-    console.log("SEARCH ALL")
     db.Recipe.findAll({}).then(function (dbRecipe) {
         console.log(dbRecipe)
         const newObject = {
             recipes: dbRecipe
         }
-        console.log(newObject)
         res.render("recipes", newObject);
     });
 });
