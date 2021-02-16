@@ -24,7 +24,7 @@ $(document).ready(function () {
         var targetUnit = $("#targetUnit").val();
         // ajax post req
         $.ajax({
-            method: "GET",
+            method: "POST",
             url: "/api/convert",
             data: {
                 name: ingredientName,

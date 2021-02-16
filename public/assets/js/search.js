@@ -30,7 +30,7 @@ $(document).ready(function () {
     function sendAll() {
         console.log("send all button")
         $.ajax({
-            method: 'POST',
+            method: 'GET',
             url: '/search-all-recipes',
         }).then(function (data) {
             console.log(data)
