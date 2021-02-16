@@ -138,6 +138,12 @@ header h1 {
     justify-content: space-around;
 }
 
+
 .card-styling li {
     list-style: none;
 }
+
+.search-all-recipes{
+    margin-left: 44%;
+}
+
