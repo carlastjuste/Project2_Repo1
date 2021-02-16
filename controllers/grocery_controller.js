@@ -20,12 +20,13 @@ const db = require("../models");
 // Retreive all grocery list 
 router.get("/grocerylist", async (req, res) => {
   try {
-  const dbGroceryLists = await db.GroceryList.findAll({})
+  const dbGroceryLists = await db.GroceryList.findAll({ include: [db.GroceryListItem] })
     .then( lst => {
               const context = {
                 grocerylists: lst.map(grocerylist => {
                   return {
                     groceryListName: grocerylist.groceryListName
+                    ,groceryListItems: grocerylist.GroceryListItems
                   }
                 })
               }

@@ -5,7 +5,10 @@
         <li>    
             <a>
                 <h3>{{ this.groceryListName }}</h3>
-                <p>content</p>
+                {{#each this.groceryListItems}}
+                  <p>itm1</p>   
+                {{/each}}
+                
             </a>
     </li>
     {{else}}
