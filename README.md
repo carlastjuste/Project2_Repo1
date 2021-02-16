@@ -1,7 +1,7 @@
 # Project2_Repo1
 
 
-## Desription
+## Description
 
 
 ## Technologies
