@@ -1,5 +1,18 @@
-<p>{{grocerylist}}</p>
+<div>
+{{#each grocerylists}}
+  <ul>
+    <li>    
+        <a>
+            <h1>{{ this.groceryListName }}</h1>
+            <p>content</p>
+        </a>
+  </li>
+ {{else}}
+      <p>No grocery available </p>
+ {{/each}}
 
+</div>
+<!--
 <div>
     <ul>
     <li>    
@@ -65,3 +78,4 @@
 </ul>
     
 </div>
+-->
