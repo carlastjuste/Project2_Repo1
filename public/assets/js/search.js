@@ -6,8 +6,8 @@ $(document).ready(function () {
     $(document).on("click", "button.search-all-recipes", sendAll);
 
 
-    // function sendMatchingName(event) {
-    //     event.preventDefault();
+    function sendMatchingName(event) {
+        event.preventDefault();
 
     //     var userInput = $("#recipeName").val();
 
@@ -24,13 +24,13 @@ $(document).ready(function () {
     //     }).then(function (data) {
     //         location.reload();
     //     });
-    // };
+    };
 
 
-    // function sendMatchingType() {
-    //     console.log("matching type button")
+    function sendMatchingType() {
+        console.log("matching type button")
     //     // categoryType: $("#categoryType").val()
-    // }
+    }
 
     function sendAll() {
         location.replace("/search-all-recipes")
