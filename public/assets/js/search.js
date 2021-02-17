@@ -6,29 +6,33 @@ $(document).ready(function () {
     $(document).on("click", "button.search-all-recipes", sendAll);
 
 
-    function sendMatchingName() {
-        var userInput = $("#recipeName").val()
+    // function sendMatchingName(event) {
+    //     event.preventDefault();
 
-        $.ajax({
-            method: 'POST',
-            url: '/recipes/name',
-            data: {
-                recipeName: userInput
-            }
-        }).then(function (data) {
-            console.log(data)
-            // location.reload();
-        });
-    };
+    //     var userInput = $("#recipeName").val();
+
+    //     var recipeInfo = {
+    //         recipeName: userInput,
+    //     };
+
+    //     console.log(recipeInfo)
+
+    //     $.ajax({
+    //         method: 'POST',
+    //         url: '/recipes/name',
+    //         data: recipeInfo
+    //     }).then(function (data) {
+    //         location.reload();
+    //     });
+    // };
 
 
-    function sendMatchingType() {
-        console.log("matching type button")
-        // categoryType: $("#categoryType").val()
-    }
+    // function sendMatchingType() {
+    //     console.log("matching type button")
+    //     // categoryType: $("#categoryType").val()
+    // }
 
     function sendAll() {
-        console.log("send all button")
-        location.reload("/search-all-recipes")
+        location.replace("/search-all-recipes")
     }
 });

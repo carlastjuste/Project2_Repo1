@@ -25,28 +25,13 @@ $(document).ready(function () {
                 .val()
                 .trim()
         };
-
-        console.log(newPost)
+        $.ajax({
+            method: 'POST',
+            url: '/recipes/create',
+            data: newPost,
+        }).then(function (data) {
+            location.reload();
+        });
     }
 });
 
-    // Submits a new post and brings user to blog page upon completion
-    // function submitPost(post) {
-    //     $.post("/api/posts", post, function () {
-    //         window.location.href = "/";
-    //     });
-    // }
-
-
-    // Post a given recipe, bring user to the home page when done
-    //     function updatePost(post) {
-    //         $.ajax({
-    //             method: "PUT",
-    //             url: "/api/posts",
-    //             data: post
-    //         })
-    //             .then(function () {
-    //                 window.location.href = "/";
-    //             });
-    //     }
-    // });
