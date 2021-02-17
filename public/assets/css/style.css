@@ -29,7 +29,6 @@ header h1 {
     color:#FFFFFF;
     font-size: large;
     font-family: "Comic Sans MS", "Times New Roman", Times, serif;
-
 }
 
 
@@ -40,9 +39,6 @@ header h1 {
     width: 300px;
     margin-top: 2px;
     font-size: medium;
-
-
-
 }
 
 #search-recipes-Btn{
@@ -52,8 +48,6 @@ header h1 {
     width: 40px;
     border: none;
 }
-
-
 
 .login {
     text-align: right;
@@ -105,7 +99,6 @@ header h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
 }
 
 .form-select {
@@ -136,6 +129,15 @@ header h1 {
 .search-recipes button{
     margin-left: 40%;
     margin-top: 2%;
-    
+    margin-bottom: 2%;
 }
 
+.card-styling {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card-styling li {
+    list-style: none;
+}

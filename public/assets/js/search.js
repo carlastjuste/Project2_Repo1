@@ -26,7 +26,6 @@ $(document).ready(function () {
     //     });
     };
 
-
     function sendMatchingType() {
         console.log("matching type button")
     //     // categoryType: $("#categoryType").val()

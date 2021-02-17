@@ -28,19 +28,6 @@ router.get('/recipes/name', function (req, res) {
         res.render("recipes", newObject);
     });
 });
-router.get('/search-recipe-name', function (req, res) {
-    console.log(req.params)
-    // db.Recipe.findAll({
-    //     where: {
-    //         recipeName : req.body.recipeName
-    //     }
-    // }).then(function (dbRecipe) {
-    //     const newObject = {
-    //         recipes: dbRecipe
-    //     }
-    //     res.render("recipes", newObject);
-    // });
-})
 
 // api route to get all recipes from recipes table
 router.get('/search-all-recipes', function (req, res) {
@@ -69,7 +56,8 @@ router.post('/recipes/create', async (req, res) => {
         res.status(500).json(err); console.log(err)
     }
 });
-  
+
+
 //api route to get recipes from selected category 
 // router.get("/api/recipes/category/:categoryType", function (req, res) {
     // db.Recipe.findAll({
