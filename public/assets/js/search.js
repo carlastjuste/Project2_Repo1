@@ -5,34 +5,36 @@ $(document).ready(function () {
     $(document).on("click", "button.search-recipe-type", sendMatchingType);
     $(document).on("click", "button.search-all-recipes", sendAll);
 
-
+// function to search by recipe name
     function sendMatchingName(event) {
         event.preventDefault();
 
-    //     var userInput = $("#recipeName").val();
+        var userInput = $("#recipeName").val();
 
-    //     var recipeInfo = {
-    //         recipeName: userInput,
-    //     };
-
-    //     console.log(recipeInfo)
-
-    //     $.ajax({
-    //         method: 'POST',
-    //         url: '/recipes/name',
-    //         data: recipeInfo
-    //     }).then(function (data) {
-    //         location.reload();
-    //     });
+        $.ajax({
+            method: 'GET',
+            url: '/recipes/' + userInput,
+        }).then(function (data) {
+            location.replace('/recipes/' + userInput);
+        });
     };
 
-    function sendMatchingType() {
-        console.log("matching type button")
-    //     // categoryType: $("#categoryType").val()
-    }
+    // function to search by recipe type 
+    function sendMatchingType(event) {
+        event.preventDefault();
 
+        var userInput = $("#categoryType").val();
+
+        $.ajax({
+            method: 'GET',
+            url: '/search/' + userInput,
+        }).then(function (data) {
+            location.replace('/search/' + userInput);
+        });
+    };
+
+    // function to show all recipes 
     function sendAll() {
         location.replace("/search-all-recipes")
     }
 });
-    
