@@ -6,7 +6,6 @@ $(document).ready(function () {
     var instructionsInput = $("#recipe-instructions");
 
     $(document).on("click", "button.add-recipe", handleFormSubmit);
-
     // A function for handling what happens when the form to create a new post is submitted
     function handleFormSubmit(event) {
         event.preventDefault();
