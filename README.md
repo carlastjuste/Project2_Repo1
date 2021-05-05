@@ -1,4 +1,4 @@
-# Project2_Repo1
+# Recipe Hub
 
 
 ## Description
